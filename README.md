@@ -1,54 +1,56 @@
-    _    ____  ___    ____                     _ 
-   / \  |  _ \|_ _|  / ___|_   _  __ _ _ __ __| |
-  / _ \ | |_) || |  | |  _| | | |/ _` | '__/ _` |
- / ___ \|  __/ | |  | |_| | |_| | (_| | | | (_| |
+```text
+   _    ____  ___    ____                     _ 
+  / \  |  _ \|_ _|  / ___|_   _  __ _ _ __ __| |
+ / _ \ | |_) || |  | |  _| | | |/ _` | '__/ _` |
+/ ___ \|  __/ | |  | |_| | |_| | (_| | | | (_| |
 /_/   \_\_|   |___|  \____|\__,_|\__,_|_|  \__,_|
                                              L I T E
-
 Lightweight Defensive API Security Scanner Built for startups who ship fast — but want to ship secure.
 
-## 🚀 Why API Guard Lite?
+🚀 Why API Guard Lite?
 Most teams build APIs. Very few actively validate their security hygiene before production.
 
 API Guard Lite performs fast, non-intrusive checks to detect common misconfigurations that often lead to real-world breaches. It’s not about hacking. It’s about preventing stupid mistakes before they go live.
 
-## 🧠 What It Actually Does
+🧠 What It Actually Does
 API Guard Lite is designed to be a "sanity check" for your infrastructure.
 
-### ✅ Capabilities
-* **📂 Detects Exposed Sensitive Files:**
-    .env, .git/config, backup.sql, config.php, etc.
+✅ Capabilities
+📂 Detects Exposed Sensitive Files:
+.env, .git/config, backup.sql, config.php, etc.
 
-* **🔓 Identifies Public Admin Panels:**
-    Checks for common paths like /admin, /dashboard, /django-admin.
+🔓 Identifies Public Admin Panels:
+Checks for common paths like /admin, /dashboard, /django-admin.
 
-* **🛡 Checks Security Headers:**
-    Strict-Transport-Security (HSTS)
-    Content-Security-Policy (CSP)
-    X-Frame-Options
-    X-Content-Type-Options
+🛡 Checks Security Headers:
+Strict-Transport-Security (HSTS)
+Content-Security-Policy (CSP)
+X-Frame-Options
+X-Content-Type-Options
 
-* **🔒 Validates SSL/TLS Health:**
-    Checks certificate validity and issuer.
-    Enforce HTTPS: Verifies HTTP → HTTPS redirection.
+🔒 Validates SSL/TLS Health:
+Checks certificate validity and issuer.
+Enforce HTTPS: Verifies HTTP → HTTPS redirection.
 
-* **🚦 Rate Limit Detection:**
-    Performs lightweight behavior checks to see if the server throttles requests.
+🚦 Rate Limit Detection:
+Performs lightweight behavior checks to see if the server throttles requests.
 
-* **🤖 CI/CD Ready:**
-    Generates structured JSON output for automated pipelines.
+🤖 CI/CD Ready:
+Generates structured JSON output for automated pipelines.
 
-### ❌ What It Is NOT
+❌ What It Is NOT
 This is a defensive tool, not an offensive weapon.
 
-* ❌ NOT a penetration testing framework (like Metasploit).
-* ❌ NOT an exploitation tool.
-* ❌ NOT designed for SQLi, XSS, RCE, or payload injection attacks.
-* ❌ NOT a replacement for professional security audits.
+❌ NOT a penetration testing framework (like Metasploit).
 
-## ⚡ Quick Start
+❌ NOT an exploitation tool.
 
-### Installation
+❌ NOT designed for SQLi, XSS, RCE, or payload injection attacks.
+
+❌ NOT a replacement for professional security audits.
+
+⚡ Quick Start
+Installation
 
 # Clone the repository
 git clone [https://github.com/yourusername/apiguard-lite.git](https://github.com/yourusername/apiguard-lite.git)
@@ -63,14 +65,13 @@ python cli.py [https://example.com](https://example.com)
 Safe Mode (Production Safe):
 Skips intrusive checks like rate limit testing and directory brute-forcing.
 
-
 python cli.py [https://example.com](https://example.com) --safe
 JSON Output (CI/CD):
-
 
 python cli.py [https://example.com](https://example.com) --json
 🏗 Example Output
 When running in standard mode, you get a rich, hacker-chic terminal output:
+
 
 Target locked: [https://example.com](https://example.com)
 
@@ -89,6 +90,7 @@ You can easily integrate API Guard Lite into your GitHub Actions or GitLab CI pi
 
 Example Logic:
 Fail the deployment if the security score is below 80.
+
 
 # Run scan and capture JSON
 SCAN_RESULT=$(python cli.py [https://staging.example.com](https://staging.example.com) --json)
